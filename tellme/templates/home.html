@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+<div class="container _shadow">
+    <div class="jumbo">
+        <h1>This is <small>Shout</small>Me<br></h1>
+        <h3>Hello {{ request.user }}!!</h3>
+        {% if request.user.username == '' %}
+        <a class="btn _primary _xlarge" href="/signup"><b>SignUp Here</b></a>
+        {% else %}
+        <form  action="/{{request.user}}" method='GET' ><input type='submit' class='_success _xlarge' value='Go to Your Page'></form>
+        <h4><b>OR</b></h4>
+        <form  action="{% url 'tellme:viewshout' %}" method='GET' ><input type='submit' class='_primary _xlarge' value='See What You Got'></form>
+        {% endif %}
+    </div>
+</div>
+
+{%endblock%}

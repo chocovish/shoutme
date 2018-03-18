@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
+	<link rel="stylesheet" type="text/css" href="{% static 'beauter.min.css'%}"/>
+</head>
+
+<body class="_nightblue">
+<!-- NAVBAR starts here -->
+<ul class="topnav" id="myTopnav" style="">
+     <li>
+        <a class="brand" href="{% url "tellme:index" %}"><img src="http://beauter.outboxcraft.com/img/chry.svg" style="width:20px"> ShoutMe</a>
+     </li>
+     <li>
+        <a href="{% url "tellme:profileupdate" %}">My Profile</a>
+     </li>
+     <li>
+        <a href="javascript:void(0);" onclick="alert('In Beta Mode..!!')">Search</a>
+     </li>
+     <li class="-icon">
+        <a href="javascript:void(0);" onclick="topnav('myTopnav')">☰</a>
+     </li>
+     <li class="" style="float:right; display:inline!important">
+          {% if request.user.username == '' %}
+         <a href="{% url 'tellme:login' %}"><b>Login Here</b></a>
+         {% else %}
+         <a href="{% url 'tellme:profile' request.user.username %}"><b>Hey {{ request.user}}</b></a>
+         {% endif %}
+     </li>
+     
+  </ul>
+<!-- navbar ends here -->
+
+{% block body %}{% endblock %} 
+
+
+
+<!-- design your site here -->
+
+<script src="https://rawgit.com/outboxcraft/beauter/master/beauter.min.js"></script>
+</body>
+
+</html>

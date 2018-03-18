@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+<div class='container jumbo _shadow'>
+    
+
+{% for c in clist %}
+
+<h5><span class='_brown _shadow _round' style="padding:5px;">{{c.comment}}</span></h5>
+
+{% endfor %}
+
+</div>
+
+{% endblock %}

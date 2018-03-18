@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+{% block body %}
+    <div class="container">
+    <div class="col m7">
+        <div class="jumbo _nightblue">
+            <h1>{{profile.first_name}} {{ profile.last_name}}</h1>
+            <img class="-circle" style="width:210px" src="{{ profile.info.photo }}">
+            <h2><small>ShoutMe/</small><b>{{ profile.username }}</b></h2>
+            <h5><i>Last Checked {{ profile.last_login }}</i></h5>
+            <p>{{ profile.email }}</p>
+            <b class="_shadow"><big><i>{{ profile.info.bio }}</i></big></b>
+        </div>
+    </div>
+
+    <div class="col m5">
+        <div class="jumbo -round _shadow">
+            <h1><br>Tell Me Something</h1>
+            <form action="" method="POST">
+                {% csrf_token %}
+                <textarea name="comment" id="id_comment" cols="30" rows="55" style="height:100px;"></textarea>
+                <button type="submit" class="_xlarge _primary _shadow">Shout ME</button>
+            </form>
+            
+        </div>
+    </div>
+</div>
+{% endblock %}

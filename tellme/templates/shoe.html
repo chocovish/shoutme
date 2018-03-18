@@ -1,0 +1,11 @@
+{% for q in arr %}
+
+{{q}} <br>
+<ul>
+{% for i in q.choice_set.filter %}
+<li>
+{{i}}
+</li>
+{% endfor %}
+</ul>
+{% endfor %}
