@@ -129,5 +129,5 @@ LOGIN_REDIRECT_URL = 'tellme:profileupdate'
 # Heroku thing..!!
 
 import dj_database_url
-db_from_env = dj_database_url.cofig(conn_max_age=500)
+db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES['DEFAULT'].update(db_from_env)
