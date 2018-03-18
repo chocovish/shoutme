@@ -80,7 +80,7 @@ DATABASES = {
         'NAME': "shoutme",
         'HOST': "localhost",
         'USER': "root",
-        'PASSWORD': "",
+        'PASSWORD': "1234",
         'PORT': "",
     }
 }
