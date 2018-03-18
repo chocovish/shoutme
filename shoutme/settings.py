@@ -25,7 +25,7 @@ SECRET_KEY = 'n&^)*9+#-j0li#z)x30oj^d@$n_pmb&v3-xyxupaq%6(o5w4cr'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = [".herokuapp.com"]
 
 
 # Application definition
@@ -123,7 +123,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = BASE_DIR
+STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')
 LOGIN_REDIRECT_URL = 'tellme:profileupdate'
 
 
