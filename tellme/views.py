@@ -14,6 +14,7 @@ def signup(request):
             u = form.save()
             info.objects.create(user=u)
             return HttpResponseRedirect('/login')
+        return render(request,'r.html',{'form':form})
     return render(request,'r.html',{'form':SignupForm})
 
 
