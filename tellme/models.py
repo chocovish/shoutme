@@ -7,7 +7,7 @@ from django.utils import timezone
 class Comments(models.Model):
     profile = models.ForeignKey(User,on_delete=models.CASCADE)
     comment = models.TextField()
-
+    time = models.DateTimeField(auto_now_add=True)
     def __str__(self):
         return "{} - {}".format(self.profile,self.comment)
 
